@@ -43,7 +43,7 @@ exports.dev = {
         exclude: /node_modules/,
         loader: "babel-loader?presets[]=react&presets[]=es2015&presets[]=stage-0"
       },
-      {test: /\.scss$/, loader: 'style!css!postcss-loader!sass?sourceMap'},
+      {test: /\.scss$/, loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader!sass?sourceMap'},
       {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
     ]
   },
