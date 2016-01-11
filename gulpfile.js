@@ -105,8 +105,3 @@ gulp.task('dev', gulpSequence('clean', 'copy', 'webpack-dev', 'watch', 'browser-
 
 // 单次执行gulp
 gulp.task('one', gulpSequence('clean', 'copy', 'webpack-dev'));
-
-//有待研究问题
-//1.gulp-scp2直接上传文件至cdn
-//2.webpack打包第三方js库
-//3.webpack分代码块

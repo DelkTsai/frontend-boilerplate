@@ -1,28 +1,7 @@
-var fetch = require("isomorphic-fetch");
+import fetch from "isomorphic-fetch"
+import types from "../constants/ActionTypes.js";
+import {actionCreator} from "redux-action-utils";
 
-var types = require("../constants/ActionTypes");
-
-var {actionCreator}= require("redux-action-utils");
-
-
-//exports.addTag = function (state) {
-//  return {
-//    type: types.ADD_TAG,
-//    state: state
-//  }
-//};
-
-
-// 选择下拉框
-//exports.selectReddit = function (reddit) {
-//  return {
-//    type: types.SELECT_REDDIT,
-//    reddit: reddit
-//  }
-//};
-
-// 上面的两个函数可以通过actionCreator精简为下面两行代码
-exports.addTag = actionCreator(types.ADD_TAG, "state");
 exports.selectReddit = actionCreator(types.SELECT_REDDIT, "reddit");
 
 // 点击刷新按钮
@@ -33,7 +12,11 @@ exports.invalidateReddit = function (reddit) {
   };
 };
 
-// 发送ajax请求
+/**
+ * 根据文章类型发出请求
+ * @param reddit {string} 文章的类别 reactjs/frontend
+ * @returns {{type: null, reddit: *}}
+ */
 exports.requestPosts = function (reddit) {
   return {
     type: types.REQUEST_POSTS,
@@ -41,7 +24,12 @@ exports.requestPosts = function (reddit) {
   };
 };
 
-// 请求返回数据
+/**
+ * 接收文章数据
+ * @param reddit {string} 文章的类别 reactjs/frontend
+ * @param json {Object} 请求返回的文章数据
+ * @returns {{type: null, reddit: *, posts: *, receivedAt: number}}
+ */
 exports.receivePosts = function (reddit, json) {
   return {
     type: types.RECEIVE_POSTS,
@@ -53,43 +41,19 @@ exports.receivePosts = function (reddit, json) {
   };
 };
 
-// fetch
-// 来看一下我们写的第一个 thunk action creator！
-// 虽然内部操作不同，你可以像其它 action creator 一样使用它：
-// store.dispatch(fetchPosts("reactjs"));
-
+/**
+ * 根据文章类别请求接收数据全过程
+ * @param reddit {string} 文章的类别 reactjs/frontend
+ * @returns {Function}
+ */
 exports.fetchPosts = function (reddit) {
-
-  // Thunk middleware 知道如何处理函数。
-  // 这里把 dispatch 方法通过参数的形式参给函数，
-  // 以此来让它自己也能 dispatch action。
-
   return function (dispatch) {
-
-    // 首次 dispatch：更新应用的 state 来通知
-    // API 请求发起了。
-
     dispatch(exports.requestPosts(reddit));
-
-    // thunk middleware 调用的函数可以有返回值，
-    // 它会被当作 dispatch 方法的返回值传递。
-
-    // 这个案例中，我们返回一个等待处理的 promise。
-    // 这并不是 redux middleware 所必须的，但是我们的一个约定。
-
-
     return fetch("http://www.reddit.com/r/" + reddit + ".json")
-        .then(response => response.json())
-        .then(json =>
-
-          // 可以多次 dispatch！
-          // 这里，使用 API 请求结果来更新应用的 state。
-
-            dispatch(exports.receivePosts(reddit, json))
+      .then(response => response.json())
+      .then(json =>
+        dispatch(exports.receivePosts(reddit, json))
     );
-
-    // 在实际应用中，还需要
-    // 捕获网络请求的异常。
   };
 };
 
