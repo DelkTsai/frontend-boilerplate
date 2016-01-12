@@ -1,6 +1,10 @@
-var React = require("react");
+/*
+ *   created by liangshaofeng on 2016年1月12日
+ *   刷新组件(点击重新请求文章数据）
+ */
 
-require("./refresh.scss");
+import React from "react";
+import style from "./refresh.scss";
 
 var Refresh = React.createClass({
 
@@ -12,9 +16,9 @@ var Refresh = React.createClass({
 
   render: function () {
     return (
-      <a href="#"
+      <a href="javascript:;" className={style.refresh}
          onClick={this.handleRefresh}>
-        Refresh
+        刷新
       </a>
     );
   }

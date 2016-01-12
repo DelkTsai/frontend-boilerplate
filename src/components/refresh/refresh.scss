@@ -1,5 +1,14 @@
-$a-color:#ffc0cb;
+// 定义链接的颜色
+$color: #ffc0cb;
 
-a {
-  color: $a-color;
+// 定义链接hover状态的颜色
+$h-color: 'red';
+
+.refresh {
+  margin-left: 10px;
+  color: $color;
+
+  &:hover {
+    color: $h-color;
+  }
 }
