@@ -1,4 +1,9 @@
-import fetch from "isomorphic-fetch"
+/*
+ *   created by liangshaofeng on 2016年1月12日
+ *   请求文章的action
+ */
+
+import fetch from "isomorphic-fetch";
 import types from "../constants/ActionTypes.js";
 import {actionCreator} from "redux-action-utils";
 

@@ -1,7 +1,7 @@
 var React = require("react");
 var connect = require("react-redux").connect;
 var bindActionCreators = require("redux").bindActionCreators;
-var SearchActions = require("../action/search");
+import actions from "../action/rootActions.js";
 
 //var AddButton = require("addbutton");
 var View = require("../components/view/View");
@@ -27,20 +27,21 @@ var LogMonitor = require("redux-devtools/lib/react").LogMonitor;
 var Search = React.createClass({
 
   render: function () {
-    var actions = this.props.actions;
+    var postActions = this.props.postActions;
     var selectedReddit = this.props.selectedReddit;
     var posts = this.props.posts;
     var search = this.props.search;
 
+
     return (
       <div className="add">
-        <h1>我是search</h1>
+        <h1>我是search2222</h1>
         <View state={search}/>
 
         <Picker value={selectedReddit}
-                onChange={actions.selectReddit}
+                onChange={postActions.selectReddit}
                 options={[ "reactjs", "frontend" ]}/>
-        <Refresh reddit={selectedReddit} refresh={actions.fetchPosts}/>
+        <Refresh reddit={selectedReddit} refresh={postActions.fetchPosts}/>
         <Posts posts={posts}/>
         <DebugPanel top right bottom>
           <DevTools store={store}
@@ -57,7 +58,7 @@ function select(state) {
 
   return {
     search: state.search,
-    actions: SearchActions,
+    //actions: post,
     selectedReddit: state.selectedReddit,
     posts: state.postsByReddit[state.selectedReddit],
     isFetching: state.isFetching,
@@ -67,11 +68,12 @@ function select(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(SearchActions, dispatch)
+    postActions: bindActionCreators(actions.post, dispatch),
+    numberActions: bindActionCreators(actions.number, dispatch)
   };
 }
 
-module.exports = connect(select, mapDispatchToProps)(Search);
+module.exports = connect(select,mapDispatchToProps)(Search);
 
 
 

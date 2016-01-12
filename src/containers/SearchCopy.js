@@ -1,7 +1,7 @@
 var React = require("react");
 var connect = require("react-redux").connect;
 var bindActionCreators = require("redux").bindActionCreators;
-var SearchActions = require("../action/search");
+import actions from "../action/rootActions.js";
 
 //var AddButton = require("addbutton");
 var View = require("../components/view/View");
@@ -11,7 +11,6 @@ var View = require("../components/view/View");
 var Picker = require("../components/picker/Picker");
 var Posts = require("../components/posts/Posts");
 var Refresh = require("../components/refresh/Refresh");
-
 
 
 // 添
@@ -25,16 +24,16 @@ var Search = React.createClass({
     var search = this.props.search;
 
     return (
-        <div className="add">
-          <h1>我是searchcopy</h1>
-          <View state={search}/>
+      <div className="add">
+        <h1>我是searchcopy</h1>
+        <View state={search}/>
 
-          <Picker value={selectedReddit}
-                  onChange={actions.selectReddit}
-                  options={[ "reactjs", "frontend" ]}/>
-          <Refresh reddit={selectedReddit} refresh={actions.fetchPosts}/>
-          <Posts posts={posts}/>
-        </div>
+        <Picker value={selectedReddit}
+                onChange={actions.selectReddit}
+                options={[ "reactjs", "frontend" ]}/>
+        <Refresh reddit={selectedReddit} refresh={actions.fetchPosts}/>
+        <Posts posts={posts}/>
+      </div>
 
     );
   }
@@ -44,7 +43,7 @@ function select(state) {
 
   return {
     search: state.search,
-    actions: SearchActions,
+    actions: actions,
     selectedReddit: state.selectedReddit,
     posts: state.postsByReddit[state.selectedReddit],
     isFetching: state.isFetching,
@@ -54,7 +53,7 @@ function select(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(SearchActions, dispatch)
+    actions: bindActionCreators(actions, dispatch)
   };
 }
 
