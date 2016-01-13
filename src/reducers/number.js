@@ -1,5 +1,6 @@
 /**
- * Created by Mac on 15/11/27.
+ * Created by liangshaofeng on 15/11/27.
+ * 数字对应的reducer
  */
 
 var ActionTypes = require("../constants/ActionTypes");
