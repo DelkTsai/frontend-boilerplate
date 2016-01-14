@@ -11,7 +11,7 @@ var Route = require("react-router").Route;
 var Redirect = require("react-router").Redirect;
 
 // 容器
-var Search = require("./containers/Search");
+var Page1 = require("./containers/page1");
 var SearchCopy = require("./containers/SearchCopy");
 var Container = require("./containers/Index");
 
@@ -19,9 +19,9 @@ var Container = require("./containers/Index");
 module.exports = (
     <Router>
       <Route path='' component={Container}>
-        <Route path='/' component={Search}/>
+        <Route path='/' component={Page1}/>
         <Route path='/:a' component={SearchCopy}/>
-        <Route path='/a/:b' component={Search}/>
+        <Route path='/a/:b' component={Page1}/>
         <Redirect from="*" to="/"/>
       </Route>
     </Router>

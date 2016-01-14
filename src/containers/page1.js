@@ -3,7 +3,6 @@ var connect = require("react-redux").connect;
 var bindActionCreators = require("redux").bindActionCreators;
 import actions from "../action/rootActions.js";
 
-//var AddButton = require("addbutton");
 var View = require("../components/view/View");
 
 var store = require("../store/searchStore");
@@ -18,6 +17,7 @@ var Table = require("../components/table/Table");
 var DevTools = require("redux-devtools/lib/react").DevTools;
 var DebugPanel = require("redux-devtools/lib/react").DebugPanel;
 var LogMonitor = require("redux-devtools/lib/react").LogMonitor;
+import LazyLoad from "react-lazy-load";
 
 
 var Search = React.createClass({
@@ -67,7 +67,9 @@ var Search = React.createClass({
         <p>1</p>
 
         <p>1</p>
-        <Table/>
+        <LazyLoad>
+          <Table/>
+        </LazyLoad>
         <DebugPanel top right bottom>
           <DevTools store={store}
                     monitor={LogMonitor}
