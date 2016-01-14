@@ -8,21 +8,17 @@ var View = require("../components/view/View");
 
 var store = require("../store/searchStore");
 
-// 添加文章列表
 var Picker = require("../components/picker/Picker");
 var Posts = require("../components/posts/Posts");
 var Refresh = require("../components/refresh/Refresh");
+var Table = require("../components/table/Table");
 
-
-//<AddButton addSearch={actions.addTag}/>
-//<View state={search}/>
 
 // React components for Redux DevTools
 var DevTools = require("redux-devtools/lib/react").DevTools;
 var DebugPanel = require("redux-devtools/lib/react").DebugPanel;
 var LogMonitor = require("redux-devtools/lib/react").LogMonitor;
 
-// 添
 
 var Search = React.createClass({
 
@@ -35,7 +31,7 @@ var Search = React.createClass({
 
     return (
       <div className="add">
-        <h1>我是search2222</h1>
+        <h1>我是search</h1>
         <View state={search}/>
 
         <Picker value={selectedReddit}
@@ -43,6 +39,35 @@ var Search = React.createClass({
                 options={[ "reactjs", "frontend" ]}/>
         <Refresh reddit={selectedReddit} refresh={postActions.fetchPosts}/>
         <Posts posts={posts}/>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+
+        <p>1</p>
+        <Table/>
         <DebugPanel top right bottom>
           <DevTools store={store}
                     monitor={LogMonitor}
@@ -73,7 +98,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-module.exports = connect(select,mapDispatchToProps)(Search);
+module.exports = connect(select, mapDispatchToProps)(Search);
 
 
 

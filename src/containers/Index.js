@@ -4,26 +4,14 @@ var bindActionCreators = require("redux").bindActionCreators;
 
 import actions from "../action/rootActions.js";
 
-//var AddButton = require("addbutton");
-
-
-
-
 
 var Search = React.createClass({
 
-  componentDidMount:function(){
-    //console.log($(window).width());
-    //console.log($.cookie)
-  },
-
   render: function () {
     return (
-        <div className="add">
-
-          <h1>我是indexindex</h1>
-          {this.props.children}
-        </div>
+      <div className="add">
+        {this.props.children}
+      </div>
 
     );
   }
