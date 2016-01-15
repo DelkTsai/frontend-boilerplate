@@ -1,7 +1,6 @@
-var React = require("react");
-require("./posts.scss");
+import React from "react";
 
-var Posts = React.createClass({
+const Posts = React.createClass({
 
   propTypes: {
     posts: React.PropTypes.object

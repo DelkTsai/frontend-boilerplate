@@ -3,14 +3,14 @@ var connect = require("react-redux").connect;
 var bindActionCreators = require("redux").bindActionCreators;
 import actions from "../action/rootActions.js";
 
-var View = require("../components/view/View");
 
 var store = require("../store/searchStore");
 
-var Picker = require("../components/picker/Picker");
-var Posts = require("../components/posts/Posts");
-var Refresh = require("../components/refresh/Refresh");
-var Table = require("../components/table/Table");
+import View from "../components/view";
+import Picker from "../components/picker";
+import Posts from "../components/posts";
+import Refresh from "../components/refresh";
+import Table from "../components/table";
 
 
 // React components for Redux DevTools

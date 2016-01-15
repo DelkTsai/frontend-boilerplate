@@ -1,5 +1,5 @@
 var React = require("react");
-require("./view.scss");
+require("./index.scss");
 
 var View = React.createClass({
 

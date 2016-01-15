@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import style from "./refresh.scss";
+import style from "./index.scss";
 
 var Refresh = React.createClass({
 

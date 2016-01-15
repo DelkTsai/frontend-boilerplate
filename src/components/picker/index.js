@@ -5,12 +5,12 @@
 
 import React from "react";
 
-var Picker = React.createClass({
+const Picker = React.createClass({
 
   render: function () {
-    var value = this.props.value;
-    var onChange = this.props.onChange;
-    var options = this.props.options;
+    let value = this.props.value;
+    let onChange = this.props.onChange;
+    let options = this.props.options;
 
     return (
       <select onChange={e => onChange(e.target.value)}

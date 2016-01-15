@@ -1,27 +1,21 @@
 /**
- * Created by Mac on 15/11/19.
+ * Created by youngwind on 15/11/19.
+ * 定义路由
  */
 
-"use strict";
 
-// 引用
-var React = require("react"); // eslint-disable-line no-unused-vars
-var Router = require("react-router").Router;
-var Route = require("react-router").Route;
-var Redirect = require("react-router").Redirect;
+import React from "react";  // eslint-disable-line no-unused-vars
+import {Router, Route, Redirect} from "react-router";
+import Page1 from "./containers/page1.js";
+import Page2 from "./containers/page2.js";
+import Index from "./containers/Index.js";
 
-// 容器
-var Page1 = require("./containers/page1");
-var SearchCopy = require("./containers/SearchCopy");
-var Container = require("./containers/Index");
-
-// 路由
 module.exports = (
     <Router>
-      <Route path='' component={Container}>
+      <Route path='' component={Index}>
         <Route path='/' component={Page1}/>
-        <Route path='/:a' component={SearchCopy}/>
-        <Route path='/a/:b' component={Page1}/>
+        <Route path='/:a' component={Page1}/>
+        <Route path='/a/:b' component={Page2}/>
         <Redirect from="*" to="/"/>
       </Route>
     </Router>
