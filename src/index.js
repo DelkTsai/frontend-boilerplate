@@ -1,12 +1,7 @@
-var React = require("react");
-var Provider = require("react-redux").Provider;
-var store = require("./store/searchStore");
-
-
-// 路由控制
-//var history = require("history").createHistory();
-var router = require("./router");
-
+import React from "react";
+import {Provider} from "react-redux";
+import store from "./store/store.js";
+import router from "./router.js";
 
 React.render(
     <Provider store={store}>

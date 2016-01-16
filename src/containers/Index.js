@@ -2,6 +2,8 @@ var React = require("react");
 var connect = require("react-redux").connect;
 var bindActionCreators = require("redux").bindActionCreators;
 
+import ReduxDevtools from "./redux-devtools.js";
+
 import actions from "../action/rootActions.js";
 
 
@@ -9,10 +11,10 @@ var Search = React.createClass({
 
   render: function () {
     return (
-      <div className="add">
+      <div>
+        <ReduxDevtools />
         {this.props.children}
       </div>
-
     );
   }
 });
