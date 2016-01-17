@@ -5,6 +5,7 @@
 
 import React from "react";
 
+
 const Picker = React.createClass({
 
   render: function () {
@@ -13,14 +14,16 @@ const Picker = React.createClass({
     let options = this.props.options;
 
     return (
-      <select onChange={e => onChange(e.target.value)}
-              value={value}>
-        {options.map(option =>
-          <option value={option} key={option}>
-            {option}
-          </option>)
-        }
-      </select>
+      <div>
+        <select onChange={e => onChange(e.target.value)}
+                value={value}>
+          {options.map(option =>
+            <option value={option} key={option}>
+              {option}
+            </option>)
+          }
+        </select>
+      </div>
     );
   }
 });

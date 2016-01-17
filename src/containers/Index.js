@@ -5,6 +5,7 @@ var bindActionCreators = require("redux").bindActionCreators;
 import ReduxDevtools from "./redux-devtools.js";
 
 import actions from "../action/rootActions.js";
+import "antd/lib/index.css";
 
 
 var Search = React.createClass({

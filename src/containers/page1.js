@@ -10,6 +10,8 @@ import Refresh from "../components/refresh";
 import Table from "../components/table";
 import LazyLoad from "react-lazy-load";
 
+import Buttons from "../components/buttons";
+
 
 const Search = React.createClass({
 
@@ -22,6 +24,7 @@ const Search = React.createClass({
 
     return (
       <div className="add">
+        <Buttons />
         <View state={search}/>
 
         <Picker value={selectedReddit}
