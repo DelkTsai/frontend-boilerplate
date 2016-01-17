@@ -11,6 +11,7 @@ import Table from "../components/table";
 import LazyLoad from "react-lazy-load";
 
 import Buttons from "../components/buttons";
+import CheckBoxs from "../components/checkboxs";
 
 
 const Search = React.createClass({
@@ -25,6 +26,7 @@ const Search = React.createClass({
     return (
       <div className="add">
         <Buttons />
+        <CheckBoxs />
         <View state={search}/>
 
         <Picker value={selectedReddit}
