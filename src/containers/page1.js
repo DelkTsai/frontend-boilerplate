@@ -12,6 +12,7 @@ import LazyLoad from "react-lazy-load";
 
 import Buttons from "../components/buttons";
 import CheckBoxs from "../components/checkboxs";
+import DatePickers from "../components/date-pickers";
 
 
 const Search = React.createClass({
@@ -27,6 +28,7 @@ const Search = React.createClass({
       <div className="add">
         <Buttons />
         <CheckBoxs />
+        <DatePickers />
         <View state={search}/>
 
         <Picker value={selectedReddit}
