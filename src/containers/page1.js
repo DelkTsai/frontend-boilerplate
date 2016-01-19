@@ -14,6 +14,7 @@ import Buttons from "../components/buttons";
 import CheckBoxs from "../components/checkboxs";
 import DatePickers from "../components/date-pickers";
 import Alerts from "../components/alerts";
+import Carousels from "../components/carousels";
 
 
 const Search = React.createClass({
@@ -31,6 +32,8 @@ const Search = React.createClass({
         <CheckBoxs />
         <DatePickers />
         <Alerts />
+        <Carousels />
+
         <View state={search}/>
 
         <Picker value={selectedReddit}
