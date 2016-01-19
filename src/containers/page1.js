@@ -13,6 +13,7 @@ import LazyLoad from "react-lazy-load";
 import Buttons from "../components/buttons";
 import CheckBoxs from "../components/checkboxs";
 import DatePickers from "../components/date-pickers";
+import Alerts from "../components/alerts";
 
 
 const Search = React.createClass({
@@ -29,6 +30,7 @@ const Search = React.createClass({
         <Buttons />
         <CheckBoxs />
         <DatePickers />
+        <Alerts />
         <View state={search}/>
 
         <Picker value={selectedReddit}
@@ -36,34 +38,6 @@ const Search = React.createClass({
                 options={[ "reactjs", "frontend" ]}/>
         <Refresh reddit={selectedReddit} refresh={postActions.fetchPosts}/>
         <Posts posts={posts}/>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
-
-        <p>1</p>
         <LazyLoad>
           <Table/>
         </LazyLoad>
