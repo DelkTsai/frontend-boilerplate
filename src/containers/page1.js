@@ -16,6 +16,7 @@ import DatePickers from "../components/date-pickers";
 import Alerts from "../components/alerts";
 import Carousels from "../components/carousels";
 import Tables from "../components/tables";
+import Forms from "../components/forms";
 
 
 const Search = React.createClass({
@@ -35,6 +36,7 @@ const Search = React.createClass({
         <Alerts />
         <Carousels />
         <Tables />
+        <Forms />
 
         <View state={search}/>
 
@@ -43,6 +45,7 @@ const Search = React.createClass({
                 options={[ "reactjs", "frontend" ]}/>
         <Refresh reddit={selectedReddit} refresh={postActions.fetchPosts}/>
         <Posts posts={posts}/>
+
 
         <LazyLoad>
           <Table/>
