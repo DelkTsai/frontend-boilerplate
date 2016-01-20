@@ -19,16 +19,16 @@ const Carousels = React.createClass({
     return (
       <div>
         <Carousel effect="fade" autoplay="true" afterChange={this.onChange}>
-          <div className={style.title}>
+          <div className={style.title1}>
             <h3>1</h3>
           </div>
-          <div className={style.title}>
+          <div className={style.title2}>
             <h3>2</h3>
           </div>
-          <div className={style.title}>
+          <div className={style.title3}>
             <h3>3</h3>
           </div>
-          <div className={style.title}>
+          <div className={style.title4}>
             <h3>4</h3>
           </div>
         </Carousel>

@@ -1,7 +1,31 @@
-$bg-color: #00f;
+$bg1-color: #abc;
+$bg2-color: #edf;
+$bg3-color: #fff;
+$bg4-color: #987;
 
-.title {
-  background-color: $bg-color;
+%title {
+  height: 100px;
 }
+
+.title1 {
+  @extend %title;
+  background-color: $bg1-color;
+}
+
+.title2 {
+  @extend %title;
+  background-color: $bg2-color;
+}
+
+.title3 {
+  @extend %title;
+  background-color: $bg3-color;
+}
+
+.title4 {
+  @extend %title;
+  background-color: $bg4-color;
+}
+
 
 
